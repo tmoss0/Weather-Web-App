@@ -16,7 +16,7 @@ class UI {
 		this.string.textContent = weather.main.temp + ' °F';
 		this.icon.setAttribute(
 			'src',
-			`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
+			`https//openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
 		);
 		this.humidity.textContent = `Relative Humidity: ${weather.main.humidity}%`;
 		this.feelsLike.textContent = `Feels Like: ${weather.main.feels_like} °F`;
