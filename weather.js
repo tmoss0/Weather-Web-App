@@ -21,21 +21,22 @@ class Weather {
 		return responseData;
 	}
 
+	// Fetch location data for browser location
 	async getGeoWeather() {
 		const geoResponse = await fetch(
 			`https://api.opencagedata.com/geocode/v1/json?q=${this.lat}+${this.long}&key=${this.geoApiKey}`
 		);
 	
+		// Convert longtitude latitude to city state
 		const geoResponseData = await geoResponse.json();
 
 		let city = geoResponseData.results[0].components.city;
 		let state = geoResponseData.results[0].components.state_code;
 
+		// Pass city state to API to get current weather data
 		const response = await fetch(
 			`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},US&units=imperial&mode=json&appid=${this.apiKey}`
 		);
-
-		console.log('Geo location data' + response);
 
 		const responseData = await response.json();
 

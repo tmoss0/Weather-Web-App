@@ -51,6 +51,7 @@ document.getElementById('btn-get-location').addEventListener('click', (e) => {
 	}
 });
 
+// Function to display weather based on data input from user
 function getWeather() {
 	weather.getWeather()
 		.then((results) => {
@@ -59,6 +60,7 @@ function getWeather() {
 		.catch((err) => err);
 }
 
+// Function to display weather based on data location from browser
 function getGeoWeather() {
   	weather.getGeoWeather()
 		.then((results) => {
